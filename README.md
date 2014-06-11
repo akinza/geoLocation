@@ -1,6 +1,6 @@
 # geoLocation
 
-An awesome requirejs app
+An requirejs app using Google Maps API v3 to show the coordinates of the location and show their position on map. 
 
 ## Getting Started
 
