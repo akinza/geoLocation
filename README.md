@@ -1,6 +1,6 @@
 # geoLocation
 
-An requirejs app using Google Maps API v3 to show the coordinates of the location and show their position on map. 
+An requirejs app using Google Maps API v3 to show the coordinates of the location and show their position on map.
 
 ## Getting Started
 
@@ -43,7 +43,7 @@ creating `/dist/require.js`.
 ## Working with the scaffolded app
 
 There's just enough to in place to get you going. Go ahead
-and make your changes to `index.htm`. You'll start your
+and make your changes to `index.html`. You'll start your
 javascript work in `app/main.js` by requiring your first
 modules. Past that, well, the world is your oyster.
 
