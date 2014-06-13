@@ -7,11 +7,11 @@ define(["jquery"], function($) {
 		$("#getGeo").click(function(){
 			var addr = $("#addrBox").val();
 			getLangLat(addr);
-		});	
+		});
 		var getLangLat = function(addr){
 			$.ajax({
 				url:"https://maps.google.com/maps/api/geocode/json?address="
-				+addr+"&sensor=false", 
+				+addr+"&sensor=false",
 				success: handleMapResponse
 			});
 		};
@@ -21,23 +21,25 @@ define(["jquery"], function($) {
 				lng = d.results[0].geometry.location.lng,
 				formatted_address = d.results[0].formatted_address;
 				$("#content").html("")
-					.append("<p><em>Formatted Adress</em>: "+ formatted_address 
-						+", <em>Latitude</em>: "+ lat +", <em>Longitude</em>: "+ lng +"</p>");
+					.append("<p><strong>Formatted Adress</strong>: "+ formatted_address
+						+", <strong>Latitude</strong>: "+ lat +", <strong>Longitude</strong>: "+ lng +"</p>");
 			initialize(lat,lng, formatted_address);
 		};
 		var initialize = function( lat, lng, formatted_address) {
 			console.log("initialize Map", lat,lng);
 			var myLatlng = new google.maps.LatLng(lat, lng);
 			var myOptions = {
-			zoom: 10,
+			zoom: 7,
 			center: myLatlng
 			};
 			var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 			var marker = new google.maps.Marker({
 		      	position: myLatlng,
 		      	map: map,
+		      	animation: google.maps.Animation.DROP,
 		      	title: formatted_address
 		  	});
-	    };
+	  };
+
 	});
 });
